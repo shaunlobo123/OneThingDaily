@@ -367,16 +367,19 @@
       setupForm('hero-signup-form', 'hero-form-feedback');
       setupForm('cta-signup-form', 'cta-form-feedback');
 
-      // --- Smooth Scrolling for Navigation ---
+      // --- Smooth Scrolling for Navigation (with header offset) ---
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
-            targetElement.scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+            window.scrollTo({
+              top: targetTop,
+              behavior: 'smooth'
             });
           }
         });
