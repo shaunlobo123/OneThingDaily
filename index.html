@@ -209,80 +209,64 @@
       </div>
     </section>
 
-    <!-- Interactive Grove Showcase -->
+    <!-- Canopy Preview + CTA — combined section -->
     <section id="preview" class="section">
       <div class="section-container">
-        <div class="showcase-container">
-          <!-- Screenshot Preview -->
-          <div class="showcase-col-image">
-            <div class="phone-frame">
-              <img src="assets/discipline canopy photo.PNG" alt="One Thing Daily Canopy Tree View">
+        <div class="section-header" style="text-align: center; margin-bottom: 3rem;">
+          <span class="section-subtitle">Aesthetic Habit Tracking</span>
+          <h2 class="section-title">Habits you can see and feel.</h2>
+        </div>
+
+        <div class="preview-bullets-grid">
+          <div class="showcase-bullet">
+            <div class="bullet-number">✓</div>
+            <div class="bullet-content">
+              <h4>Visual Consistency</h4>
+              <p>Nurturing habits doesn't need charts or graphs. Seeing your tree grow leaves of discipline provides a
+                natural, comforting feedback loop.</p>
             </div>
           </div>
 
-          <!-- Feature Bullets -->
-          <div class="showcase-bullets">
-            <div class="section-header" style="text-align: left; margin-bottom: 2rem; max-width: 100%;">
-              <span class="section-subtitle">Aesthetic Habit Tracking</span>
-              <h2 class="section-title">Habits you can see and feel.</h2>
+          <div class="showcase-bullet">
+            <div class="bullet-number">✓</div>
+            <div class="bullet-content">
+              <h4>Zero Distractions</h4>
+              <p>One task, one photo post, once a day. You get in, celebrate
+                consistency, and get back to your life.</p>
             </div>
+          </div>
 
-            <div class="showcase-bullet">
-              <div class="bullet-number">✓</div>
-              <div class="bullet-content">
-                <h4>Visual Consistency</h4>
-                <p>Nurturing habits doesn't need charts or graphs. Seeing your tree grow leaves of discipline provides a
-                  natural, comforting feedback loop.</p>
-              </div>
-            </div>
-
-            <div class="showcase-bullet">
-              <div class="bullet-number">✓</div>
-              <div class="bullet-content">
-                <h4>Zero Distractions</h4>
-                <p> One task, one photo post, once a day. You get in, celebrate
-                  consistency, and get back to your life.</p>
-              </div>
-            </div>
-
-            <div class="showcase-bullet">
-              <div class="bullet-number">✓</div>
-              <div class="bullet-content">
-                <h4>Calming Warm Aesthetics</h4>
-                <p>Built with cozy earth tones, gentle gradients, and hand-drawn elements. We respect your attention
-                  span and aim to make self-improvement peaceful.</p>
-              </div>
+          <div class="showcase-bullet">
+            <div class="bullet-number">✓</div>
+            <div class="bullet-content">
+              <h4>Calming Warm Aesthetics</h4>
+              <p>Built with cozy earth tones, gentle gradients, and hand-drawn elements. We respect your attention
+                span and aim to make self-improvement peaceful.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section id="join" class="section">
-      <div class="section-container">
-        <div class="cta-wrapper">
-          <div class="cta-content">
-            <h2 class="section-title" style="font-size: 2.75rem;">Join the Grove Early</h2>
-            <p class="section-description" style="font-size: 1.1rem; max-width: 500px; margin: 0 auto;">
-              Ready to grow your daily canopy? Input your email to join the early launch private beta list.
-            </p>
-            <div class="signup-form-container">
-              <form class="signup-form" id="cta-signup-form">
-                <input type="email" class="signup-input" placeholder="Enter your email address" required
-                  aria-label="Email Address">
-                <button type="submit" class="btn-primary">
-                  <span>Get Early Access</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"></line>
-                    <polyline points="12 5 19 12 12 19"></polyline>
-                  </svg>
-                </button>
-              </form>
-              <div class="form-feedback" id="cta-form-feedback">
-                ✓ Welcome aboard! You're on the early list.
-              </div>
+        <!-- Inline CTA -->
+        <div id="join" class="cta-inline">
+          <h2 class="section-title" style="font-size: 2.2rem; margin-bottom: 0.75rem;">Join the Grove Early</h2>
+          <p class="section-description" style="font-size: 1.05rem; max-width: 480px; margin: 0 auto 2rem;">
+            Ready to grow your daily canopy? Input your email to join the early launch private beta list.
+          </p>
+          <div class="signup-form-container">
+            <form class="signup-form" id="cta-signup-form">
+              <input type="email" class="signup-input" placeholder="Enter your email address" required
+                aria-label="Email Address">
+              <button type="submit" class="btn-primary">
+                <span>Get Early Access</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+            </form>
+            <div class="form-feedback" id="cta-form-feedback">
+              ✓ Welcome aboard! You're on the early list.
             </div>
           </div>
         </div>
@@ -494,7 +478,7 @@
           arrow.addEventListener('click', () => {
             const steps = document.getElementById('how-it-works');
             if (steps) {
-              const top = steps.getBoundingClientRect().top + window.pageYOffset - 70;
+              const top = steps.getBoundingClientRect().top + window.pageYOffset - 10;
               smoothScrollTo(top, 600);
             }
           });
