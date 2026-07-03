@@ -433,6 +433,15 @@ h1, h2, h3, h4 {
   z-index: 1;
 }
 
+.hero-phone-container .phone-frame {
+  aspect-ratio: 1170 / 2532;
+}
+
+.hero-phone-container .phone-frame img {
+  height: 100%;
+  object-fit: cover;
+}
+
 /* --- Sections --- */
 .section {
   padding: 8rem 2rem;
