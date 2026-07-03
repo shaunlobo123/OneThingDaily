@@ -446,7 +446,7 @@
         if (el.id === 'how-it-works') {
           // Top-align so both the section header AND Step 1 are visible below the navbar
           const headerH = document.querySelector('.header').offsetHeight;
-          targetScrollTop = Math.max(0, elTop - headerH - 8);
+          targetScrollTop = Math.max(0, elTop - headerH + 20);
         } else {
           // Center all other targets in the viewport
           const elCenter = elTop + el.offsetHeight / 2;
