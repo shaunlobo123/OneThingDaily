@@ -91,6 +91,13 @@
           </div>
         </div>
       </div>
+      <!-- Mobile scroll arrow -->
+      <div class="hero-scroll-arrow" id="hero-scroll-arrow" aria-label="Scroll to steps">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="6 9 12 15 18 9"></polyline>
+        </svg>
+      </div>
     </section>
 
     <!-- Inside the Grove (Step-by-Step Flow) -->
@@ -197,6 +204,8 @@
             </div>
           </div>
         </div>
+        <!-- Mobile carousel dots -->
+        <div class="steps-dots" id="steps-dots"></div>
       </div>
     </section>
 
@@ -451,27 +460,72 @@
         return best;
       }
 
-      // Wheel — intercept and snap
-      window.addEventListener('wheel', (e) => {
-        e.preventDefault();
-        if (snapping) return;
-        snapIndex = nearestSnapIndex();
-        snapToIndex(snapIndex + (e.deltaY > 0 ? 1 : -1));
-      }, { passive: false });
+      // ── Desktop only: wheel snap intercept ──
+      if (window.innerWidth > 768) {
+        // Wheel — intercept and snap
+        window.addEventListener('wheel', (e) => {
+          e.preventDefault();
+          if (snapping) return;
+          snapIndex = nearestSnapIndex();
+          snapToIndex(snapIndex + (e.deltaY > 0 ? 1 : -1));
+        }, { passive: false });
 
-      // Touch swipe support
-      let touchStartY = 0;
-      window.addEventListener('touchstart', (e) => {
-        touchStartY = e.touches[0].clientY;
-      }, { passive: true });
+        // Touch vertical snap (desktop/tablet)
+        let touchStartY = 0;
+        window.addEventListener('touchstart', (e) => {
+          touchStartY = e.touches[0].clientY;
+        }, { passive: true });
 
-      window.addEventListener('touchend', (e) => {
-        if (snapping) return;
-        const dy = touchStartY - e.changedTouches[0].clientY;
-        if (Math.abs(dy) < 40) return;
-        snapIndex = nearestSnapIndex();
-        snapToIndex(snapIndex + (dy > 0 ? 1 : -1));
-      }, { passive: true });
+        window.addEventListener('touchend', (e) => {
+          if (snapping) return;
+          const dy = touchStartY - e.changedTouches[0].clientY;
+          if (Math.abs(dy) < 40) return;
+          snapIndex = nearestSnapIndex();
+          snapToIndex(snapIndex + (dy > 0 ? 1 : -1));
+        }, { passive: true });
+      }
+
+      // ── Mobile only: arrow + carousel dots ──
+      if (window.innerWidth <= 768) {
+
+        // Scroll arrow → smooth scroll to steps
+        const arrow = document.getElementById('hero-scroll-arrow');
+        if (arrow) {
+          arrow.addEventListener('click', () => {
+            const steps = document.getElementById('how-it-works');
+            if (steps) {
+              const top = steps.getBoundingClientRect().top + window.pageYOffset - 70;
+              smoothScrollTo(top, 600);
+            }
+          });
+        }
+
+        // Build carousel dots
+        const carousel = document.querySelector('.grid-showcase');
+        const dotsContainer = document.getElementById('steps-dots');
+        const slides = document.querySelectorAll('.showcase-row');
+
+        if (carousel && dotsContainer && slides.length) {
+          // Create one dot per step
+          slides.forEach((_, i) => {
+            const dot = document.createElement('button');
+            dot.className = 'steps-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', 'Go to step ' + (i + 1));
+            dot.addEventListener('click', () => {
+              carousel.scrollTo({ left: carousel.offsetWidth * i, behavior: 'smooth' });
+            });
+            dotsContainer.appendChild(dot);
+          });
+
+          // Update active dot on scroll
+          carousel.addEventListener('scroll', () => {
+            const index = Math.round(carousel.scrollLeft / carousel.offsetWidth);
+            dotsContainer.querySelectorAll('.steps-dot').forEach((dot, i) => {
+              dot.classList.toggle('active', i === index);
+            });
+          }, { passive: true });
+        }
+      }
     });
   </script>
 </body>
