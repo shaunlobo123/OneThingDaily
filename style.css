@@ -903,6 +903,11 @@ h1, h2, h3, h4 {
   max-width: 480px;
 }
 
+/* Mobile-only steps header — hidden on desktop */
+.mobile-steps-header {
+  display: none;
+}
+
 /* ==============================================
    MOBILE — Full overhaul for phones (≤ 768px)
    ============================================== */
@@ -1001,9 +1006,28 @@ html, body {
     overflow: hidden;
   }
 
+  /* Hide the standalone section header on mobile (it lives inside the first slide instead) */
   #how-it-works .section-header {
+    display: none;
+  }
+
+  /* Show mobile-only steps header inside first carousel slide */
+  .mobile-steps-header {
+    display: block;
+    width: 100%;
     text-align: center;
-    padding: 0 1.5rem 2rem;
+    padding: 0 0 1rem;
+    order: 0;
+  }
+
+  .mobile-steps-header .section-subtitle {
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .mobile-steps-header .section-title {
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
 
   /* ── Horizontal carousel ── */
