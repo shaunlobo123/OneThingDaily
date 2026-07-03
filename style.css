@@ -312,6 +312,8 @@ h1, h2, h3, h4 {
   align-items: center;
   gap: 0.5rem;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .btn-primary:hover {
@@ -895,6 +897,12 @@ h1, h2, h3, h4 {
   margin-top: 1rem;
 }
 
+.cta-inline .signup-form-container {
+  margin: 1.5rem auto 0;
+  width: 100%;
+  max-width: 480px;
+}
+
 /* ==============================================
    MOBILE — Full overhaul for phones (≤ 768px)
    ============================================== */
@@ -1098,6 +1106,29 @@ html, body {
   .grid-features {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .cta-inline .signup-form-container {
+    max-width: 100%;
+  }
+
+  .cta-inline .signup-form {
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 0.5rem;
+  }
+
+  .cta-inline .signup-input {
+    padding: 0.75rem 1rem;
+    text-align: center;
+  }
+
+  .cta-inline .btn-primary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.9rem;
+    white-space: normal;
+    font-size: 0.9rem;
   }
 
   .cta-wrapper {
