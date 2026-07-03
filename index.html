@@ -43,8 +43,8 @@
           </div>
           <h1 class="hero-title gradient-text">One Thing every day.<br>One beautiful grove.</h1>
           <p class="hero-description">
-            One Thing Daily is a private space where you and your close friends share proof of doing one wholesome task
-            a day. Together, watch your daily habits grow into a gorgeous, hand-drawn canopy.
+            One Thing Daily is a space where you and your close friends share your daily goals or tasks
+            each day. Together, watch your daily habits grow into a lush, vibrant grove.
           </p>
 
           <div class="signup-form-container">
@@ -114,7 +114,7 @@
                 to set your intention. No cluttered, overwhelming todo lists—just one meaningful task.
               </p>
               <div class="showcase-accent-box">
-                "What is your goal for today? e.g., Read 10 pages, call your mum..."
+                "What is your goal for today? e.g., Read 10 pages, buy your mum flowers..."
               </div>
             </div>
             <div class="showcase-col-image">
@@ -131,8 +131,7 @@
               <h3 class="showcase-heading">Capture Visual Proof</h3>
               <p class="showcase-desc">
                 Once complete, take a quick photo inside the app. Whether it's your open textbook, a nature walk, or a
-                fresh meal, snap real-life confirmation of your victory. No gallery uploads allowed, keeping it
-                authentic.
+                fresh meal, snap real-life confirmation of your victory.
               </p>
             </div>
             <div class="showcase-col-image">
@@ -148,8 +147,8 @@
               <span class="step-num">Step 03</span>
               <h3 class="showcase-heading">Seal the Commitment</h3>
               <p class="showcase-desc">
-                Tap and hold anywhere on the screen to verify your wholesome action. A cozy progress animation completes
-                the task, registering it on your streak and logging it for the day.
+                Tap and hold anywhere on the screen to verify your wholesome action. A progress animation completes
+                the task and provides orbs to grow the canaopy.
               </p>
             </div>
             <div class="showcase-col-image">
@@ -166,8 +165,8 @@
               <h3 class="showcase-heading">Connect Privately</h3>
               <p class="showcase-desc">
                 Your post goes straight to a feed shared strictly with close friends. View their daily victories, send
-                reactions, and encourage each other. No vanity metrics, no public comments, and no algorithm. Just
-                mutual support.
+                reactions, and encourage each other. No algorithm, No vanity metrics. Just
+                mutual support and encouragement.
               </p>
             </div>
             <div class="showcase-col-image">
@@ -184,7 +183,8 @@
               <h3 class="showcase-heading">Grow Your Canopy</h3>
               <p class="showcase-desc">
                 Watch your wholesome choices shape a physical tree. Each completed task grows a new leaf on your tree
-                canopy, creating a golden, visual representation of your discipline over time.
+                canopy, creating a golden, visual representation of your discipline over time. Unlock new trees every
+                month with new themes in the future.
               </p>
               <div class="showcase-accent-box">
                 "One good thing a day, grown into a forest of triumphs."
@@ -231,7 +231,7 @@
               <div class="bullet-number">✓</div>
               <div class="bullet-content">
                 <h4>Zero Distractions</h4>
-                <p>Designed around the rule of one: One task, one photo post, once a day. You get in, celebrate
+                <p> One task, one photo post, once a day. You get in, celebrate
                   consistency, and get back to your life.</p>
               </div>
             </div>
@@ -367,20 +367,17 @@
       setupForm('hero-signup-form', 'hero-form-feedback');
       setupForm('cta-signup-form', 'cta-form-feedback');
 
-      // --- Smooth Scrolling for Navigation (with header offset) ---
+      // --- Smooth Scrolling for Navigation (header-offset aware) ---
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
           const targetId = this.getAttribute('href');
-          if (targetId === '#') return;
+          if (!targetId || targetId === '#') return;
           const targetElement = document.querySelector(targetId);
           if (targetElement) {
             const headerHeight = document.querySelector('.header').offsetHeight;
             const targetTop = targetElement.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
-            window.scrollTo({
-              top: targetTop,
-              behavior: 'smooth'
-            });
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
           }
         });
       });
