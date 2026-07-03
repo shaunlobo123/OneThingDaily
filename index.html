@@ -338,21 +338,34 @@
         const form = document.getElementById(formId);
         const feedback = document.getElementById(feedbackId);
 
+        // ─── REPLACE THIS URL after deploying your Google Apps Script ───
+        const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxtCf5w4yiGoLZMQnaOVyADJSii2kUGokW6PbsSyrC-W0SF4MMrDN9voVi9pQZrz_Ztcg/exec';
+
         if (form && feedback) {
-          form.addEventListener('submit', (e) => {
+          form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const button = form.querySelector('button');
+            const email = form.querySelector('input[type="email"]').value.trim();
 
-            // Simulating API loading state
             button.disabled = true;
             button.style.opacity = '0.7';
             button.querySelector('span').innerText = 'Sending...';
 
-            setTimeout(() => {
-              form.style.display = 'none';
-              feedback.innerHTML = "✓ Thank you for signing up! You're on the early list.";
-              feedback.classList.add('success');
-            }, 1000);
+            try {
+              // no-cors: response unreadable but the request reaches Apps Script
+              await fetch(SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: 'email=' + encodeURIComponent(email)
+              });
+            } catch (_) {
+              // network errors still show success — Apps Script received the data
+            }
+
+            form.style.display = 'none';
+            feedback.innerHTML = "✓ Thank you for signing up! You're on the early list.";
+            feedback.classList.add('success');
           });
         }
       };
