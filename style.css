@@ -388,21 +388,23 @@ h1, h2, h3, h4 {
 
 /* Phone Frame Mockups */
 .phone-frame {
-  border: 10px solid #3C3835; /* Softer, warmer device frame border */
+  border: 10px solid #3C3835;
   border-radius: 36px;
   box-shadow: var(--shadow-phone);
   background: #FAF8F5;
   overflow: hidden;
-  width: 100%;
-  max-width: 280px;
+  width: 260px;
+  aspect-ratio: 390 / 844; /* iPhone standard ratio */
+  flex-shrink: 0;
   margin: 0 auto;
   position: relative;
 }
 
 .phone-frame img {
   width: 100%;
-  height: auto;
+  height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 /* Hero Media Stack */
@@ -436,10 +438,12 @@ h1, h2, h3, h4 {
 }
 
 .hero-phone-container .phone-frame {
-  aspect-ratio: 1170 / 2532;
+  width: 260px;
+  aspect-ratio: 390 / 844;
 }
 
 .hero-phone-container .phone-frame img {
+  width: 100%;
   height: 100%;
   object-fit: cover;
 }
@@ -903,11 +907,6 @@ h1, h2, h3, h4 {
   max-width: 480px;
 }
 
-/* Mobile-only steps header — hidden on desktop */
-.mobile-steps-header {
-  display: none;
-}
-
 /* ==============================================
    MOBILE — Full overhaul for phones (≤ 768px)
    ============================================== */
@@ -1006,28 +1005,9 @@ html, body {
     overflow: hidden;
   }
 
-  /* Hide the standalone section header on mobile (it lives inside the first slide instead) */
   #how-it-works .section-header {
-    display: none;
-  }
-
-  /* Show mobile-only steps header inside first carousel slide */
-  .mobile-steps-header {
-    display: block;
-    width: 100%;
     text-align: center;
-    padding: 0 0 1rem;
-    order: 0;
-  }
-
-  .mobile-steps-header .section-subtitle {
-    display: block;
-    margin-bottom: 0.4rem;
-  }
-
-  .mobile-steps-header .section-title {
-    font-size: 1.6rem;
-    line-height: 1.2;
+    padding: 0 1.5rem 2rem;
   }
 
   /* ── Horizontal carousel ── */
@@ -1076,10 +1056,11 @@ html, body {
     width: 100%;
   }
 
-  /* Constrain phone frame on mobile */
+  /* Constrain phone frame on mobile — same ratio, smaller size */
   .showcase-col-image .phone-frame {
-    width: 55vw;
-    max-width: 240px;
+    width: 48vw;
+    max-width: 210px;
+    aspect-ratio: 390 / 844;
   }
 
   .step-num, .showcase-accent-box {
