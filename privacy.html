@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — One Thing Daily</title>
+  <meta name="description" content="Privacy Policy for One Thing Daily iOS app. Understand how we collect, use, and secure your data.">
+  <style>
+    :root {
+      --color-bg: #FAF8F5;
+      --color-bg-secondary: #F4EFE6;
+      --color-card-bg: #FFFFFF;
+      --color-primary: #CF6E14;
+      --color-primary-hover: #B25A0C;
+      --color-accent-green: #3B7A57;
+      --color-border: #E8E3D7;
+      --color-text-main: #292524;
+      --color-text-secondary: #57534E;
+      --color-text-muted: #878680;
+      
+      --shadow-sm: 0 4px 12px rgba(28, 25, 23, 0.03);
+      --shadow-md: 0 12px 24px rgba(28, 25, 23, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Ambient glows */
+    body::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      right: -5%;
+      width: 45vw;
+      height: 45vw;
+      background: radial-gradient(circle, rgba(207, 110, 20, 0.04) 0%, rgba(250,248,245,0) 70%);
+      z-index: -1;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    /* Header */
+    header {
+      border-bottom: 1px solid var(--color-border);
+      background-color: rgba(250, 248, 245, 0.8);
+      backdrop-filter: blur(8px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1.25rem;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+
+    .logo svg {
+      color: var(--color-primary);
+    }
+
+    .btn-back {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: color 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .btn-back:hover {
+      color: var(--color-primary);
+    }
+
+    /* Main Content */
+    main {
+      flex: 1;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      width: 100%;
+    }
+
+    .policy-card {
+      background-color: var(--color-card-bg);
+      border: 1px solid var(--color-border);
+      border-radius: 24px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: var(--color-text-main);
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .last-updated {
+      color: var(--color-text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--color-border);
+      padding-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      color: var(--color-primary);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    p {
+      color: var(--color-text-secondary);
+      margin-bottom: 1.25rem;
+      font-size: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--color-text-secondary);
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    li strong {
+      color: var(--color-text-main);
+    }
+
+    .highlight-box {
+      background-color: rgba(59, 122, 87, 0.05);
+      border-left: 4px solid var(--color-accent-green);
+      padding: 1.25rem;
+      border-radius: 0 12px 12px 0;
+      margin: 1.5rem 0;
+    }
+
+    .highlight-box p {
+      margin-bottom: 0;
+      color: var(--color-text-secondary);
+      font-weight: 500;
+    }
+
+    .highlight-box strong {
+      color: var(--color-accent-green);
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--color-border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+      background-color: var(--color-bg-secondary);
+    }
+
+    footer p {
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      main {
+        padding: 1.5rem 1rem;
+      }
+      .policy-card {
+        padding: 1.5rem;
+        border-radius: 16px;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 19V5M5 12l7-7 7 7" />
+          <path d="M12 5a7 7 0 0 1 7 7v7H5v-7a7 7 0 0 1 7-7z" />
+        </svg>
+        <span>One Thing Daily</span>
+      </a>
+      <a href="index.html" class="btn-back">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" 
+          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main>
+    <article class="policy-card">
+      <h1>Privacy Policy</h1>
+      <div class="last-updated">Last Updated: July 2026</div>
+
+      <p>
+        Welcome to One Thing Daily. Your privacy is critically important to us. This Privacy Policy describes how we collect, use, and protect your information when you use our mobile application (the "App") built with Expo and our landing page website.
+      </p>
+
+      <h2>1. Information We Collect</h2>
+      <p>
+        To provide you with a secure, personalized, and social habit-building experience, we collect specific types of information. We explicitly document our data collection practices based on our technology stack below:
+      </p>
+      <ul>
+        <li>
+          <strong>Account Info:</strong> We collect and process your email address securely for authentication purposes. This allows you to safely register, log in, recover your account, and sync your progress.
+        </li>
+        <li>
+          <strong>User Content:</strong> To build your tree canopy and share your daily wins, you upload photos, verification images, and custom tasks. This content is posted directly to your private social friend feed and is only shared with the close friends you choose to connect with inside the App.
+        </li>
+        <li>
+          <strong>Identifiers:</strong> We utilize unique User IDs generated and managed by Supabase. These identifiers allow us to securely associate your profile data, tasks, and tree canopy progress without exposing your real-world identity.
+        </li>
+      </ul>
+
+      <h2>2. Technology Stack & Data Security</h2>
+      <p>
+        All communications and data transfers between the App and our backend services are encrypted using secure protocols (HTTPS). 
+      </p>
+      <div class="highlight-box">
+        <p>
+          We use <strong>Supabase</strong>, a leading and secure backend-as-a-service provider, for our secure backend database and media storage over HTTPS.
+        </p>
+      </div>
+      <p>
+        Your photos, verification images, account information, and progress are stored securely in Supabase's encrypted storage and database structures.
+      </p>
+
+      <h2>3. Data Sharing & Advertising</h2>
+      <p>
+        We believe that your habits and photos should remain private to you and your selected group of friends. 
+      </p>
+      <ul>
+        <li>
+          <strong>No Selling of Data:</strong> We do NOT sell, rent, or trade your personal data, contact details, or user-generated content to any third parties.
+        </li>
+        <li>
+          <strong>No Third-Party Ads:</strong> One Thing Daily does NOT use any third-party advertising networks. You will never see advertisements inside the App, and your activity is not tracked for advertising purposes.
+        </li>
+      </ul>
+
+      <h2>4. Changes to This Policy</h2>
+      <p>
+        We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date at the top of this document.
+      </p>
+
+      <h2>5. Contact Us</h2>
+      <p>
+        If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us at support@onethingdaily.com.
+      </p>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="section-container">
+      <p>&copy; 2026 One Thing Daily. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
