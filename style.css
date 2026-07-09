@@ -1,8 +1,5 @@
 /* style.css - Premium Wholesome Cream & Ochre Theme for One Thing Daily Landing Page */
 
-/* --- Google Fonts --- */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
-
 /* --- Custom Variables & Theme --- */
 :root {
   --font-primary: 'Outfit', sans-serif;
@@ -413,12 +410,12 @@ h1, h2, h3, h4 {
 
 /* Phone Frame Mockups */
 .phone-frame {
-  border: 10px solid #3C3835;
-  border-radius: 36px;
+  border: 6px solid #3C3835;
+  border-radius: 30px;
   box-shadow: var(--shadow-phone);
   background: #FAF8F5;
   overflow: hidden;
-  width: 260px;
+  width: clamp(220px, 22vw, 250px);
   aspect-ratio: 390 / 844; /* iPhone standard ratio */
   flex-shrink: 0;
   margin: 0 auto;
@@ -463,7 +460,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-phone-container .phone-frame {
-  width: 260px;
+  width: clamp(220px, 22vw, 250px);
   aspect-ratio: 390 / 844;
 }
 
@@ -964,9 +961,24 @@ html, body {
   /* ── Header: clean logo + compact button ── */
   .header {
     position: absolute;
-    padding: 0.75rem 1.25rem;
+    padding: 0;
     background: transparent;
     border-bottom: none;
+  }
+
+  .nav-container {
+    padding: 0.85rem 1rem;
+  }
+
+  .logo {
+    gap: 0.45rem;
+    font-size: clamp(1rem, 4.4vw, 1.2rem);
+  }
+
+  .logo svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
   }
   
   .nav-links {
@@ -980,7 +992,7 @@ html, body {
   }
 
   .btn-nav {
-    padding: 0.45rem 1rem;
+    padding: 0.45rem 0.85rem;
     font-size: 0.8rem;
     box-shadow: 0 2px 8px rgba(207, 110, 20, 0.15);
   }
@@ -1000,7 +1012,7 @@ html, body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 5.5rem 1.25rem 2rem;
+    padding: 5rem 1rem 1.5rem;
     position: relative;
     box-sizing: border-box;
   }
@@ -1019,25 +1031,36 @@ html, body {
     display: none; /* Keep hero image hidden on mobile for clean minimalist start */
   }
 
+  .hero-content {
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .badge {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.78rem;
+    max-width: 100%;
+  }
+
   .hero-title {
-    font-size: 2.25rem;
+    font-size: clamp(2rem, 10.5vw, 2.45rem);
     line-height: 1.2;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.25rem;
+    letter-spacing: 0;
+    margin-bottom: 0.25rem;
   }
 
   .hero-description {
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: clamp(0.95rem, 4.2vw, 1.05rem);
+    line-height: 1.5;
     max-width: 480px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 0.75rem;
   }
 
   /* ── Stacking signup form for all mobile/tablet viewports ── */
   .signup-form-container {
     width: 100%;
     max-width: 440px;
-    margin: 0 auto 2rem;
+    margin: 0 auto 1rem;
   }
 
   .signup-form {
@@ -1069,6 +1092,12 @@ html, body {
   .hero-social-proof {
     margin: 0 auto;
     justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .proof-text {
+    max-width: 210px;
+    text-align: left;
   }
 
   /* ── Scroll arrow: Outline style ── */
@@ -1082,7 +1111,7 @@ html, body {
     background: transparent;
     border: 1.5px solid var(--color-border);
     color: var(--color-text-secondary);
-    margin: 1.5rem auto 0;
+    margin: 1rem auto 0;
     cursor: pointer;
     animation: bounce 1.8s ease-in-out infinite;
     flex-shrink: 0;
@@ -1096,7 +1125,7 @@ html, body {
 
   /* ── Steps section: Premium Card Carousel ── */
   #how-it-works {
-    padding: 4rem 0 3rem;
+    padding: 3rem 0 2.25rem;
   }
 
   #how-it-works .section-container {
@@ -1107,14 +1136,19 @@ html, body {
 
   #how-it-works .section-header {
     text-align: center;
-    padding: 0 1.5rem 2rem;
-    margin-bottom: 2rem;
+    padding: 0 1.1rem 1.25rem;
+    margin-bottom: 1rem;
   }
 
   .section-title {
-    font-size: 2rem;
+    font-size: clamp(1.75rem, 8vw, 2.05rem);
     line-height: 1.25;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
+  }
+
+  .section-description {
+    font-size: 0.98rem;
+    line-height: 1.5;
   }
 
   .grid-showcase {
@@ -1136,8 +1170,8 @@ html, body {
   /* Slide cards: center aligned, with peek-a-boo gaps */
   .showcase-row,
   .showcase-row.reverse {
-    width: calc(100vw - 3.5rem);
-    min-width: calc(100vw - 3.5rem);
+    width: min(330px, calc(100vw - 2.25rem));
+    min-width: min(330px, calc(100vw - 2.25rem));
     margin: 0 0.5rem;
     flex-shrink: 0;
     scroll-snap-align: center;
@@ -1145,13 +1179,13 @@ html, body {
     flex-direction: column;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
     text-align: center;
-    padding: 1.25rem 1rem;
+    padding: 1rem 0.9rem;
     box-sizing: border-box;
     background: var(--color-card-bg);
     border: 1px solid var(--color-border);
-    border-radius: 24px;
+    border-radius: 16px;
     box-shadow: var(--shadow-sm);
   }
 
@@ -1172,9 +1206,11 @@ html, body {
   }
 
   .showcase-col-image .phone-frame {
-    width: 32vw;
-    max-width: 110px;
+    width: clamp(96px, 30vw, 118px);
     aspect-ratio: 390 / 844;
+    border-width: 3px;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px -14px rgba(28, 25, 23, 0.28);
   }
 
   .showcase-col-text {
@@ -1186,16 +1222,16 @@ html, body {
   }
 
   .showcase-heading {
-    font-size: 1.25rem;
+    font-size: clamp(1.15rem, 5vw, 1.3rem);
     line-height: 1.25;
-    letter-spacing: -0.01em;
+    letter-spacing: 0;
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
 
   .showcase-desc {
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: clamp(0.82rem, 3.6vw, 0.9rem);
+    line-height: 1.45;
   }
 
   .step-num {
@@ -1207,7 +1243,7 @@ html, body {
 
   .showcase-accent-box {
     margin: 0.25rem auto 0;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     padding: 0.5rem 0.75rem;
     width: 100%;
     max-width: 280px;
@@ -1242,7 +1278,7 @@ html, body {
 
   /* ── Rest of the page ── */
   .section {
-    padding: 3.5rem 1.25rem;
+    padding: 3rem 1rem;
   }
 
   .preview-bullets-grid {
@@ -1267,8 +1303,8 @@ html, body {
   }
 
   .cta-inline {
-    padding: 2.25rem 1.25rem;
-    border-radius: 20px;
+    padding: 2rem 1rem;
+    border-radius: 16px;
   }
 
   .cta-inline .section-title {
