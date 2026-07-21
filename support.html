@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — One Thing Daily</title>
+  <meta name="description" content="Get help with One Thing Daily, contact support, and find account and privacy information.">
+  <style>
+    :root {
+      --bg: #faf8f5; --surface: #fff; --soft: #f4efe6; --border: #e8e3d7;
+      --primary: #cf6e14; --primary-dark: #b25a0c; --text: #292524;
+      --secondary: #57534e; --muted: #78716c; --green: #3b7a57;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { min-height: 100vh; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; }
+    header { border-bottom: 1px solid var(--border); background: rgba(250,248,245,.94); position: sticky; top: 0; }
+    nav { max-width: 860px; margin: auto; padding: 1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .logo { color: var(--primary); font-weight: 800; font-size: 1.2rem; text-decoration: none; }
+    .back { color: var(--secondary); font-weight: 600; text-decoration: none; }
+    main { max-width: 860px; margin: auto; padding: 3.5rem 1.5rem 5rem; }
+    .eyebrow { color: var(--primary); font-size: .8rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.25rem, 7vw, 3.75rem); line-height: 1.08; margin: .65rem 0 1rem; letter-spacing: -.035em; }
+    .intro { color: var(--secondary); font-size: 1.12rem; max-width: 650px; }
+    .contact { margin: 2rem 0 2.75rem; padding: 1.6rem; background: var(--surface); border: 1px solid var(--border); border-radius: 20px; box-shadow: 0 12px 30px rgba(41,37,36,.06); }
+    .contact h2 { font-size: 1.35rem; margin-bottom: .45rem; }
+    .contact p { color: var(--secondary); }
+    .email { display: inline-flex; margin-top: 1rem; padding: .8rem 1.1rem; border-radius: 999px; background: var(--primary); color: white; font-weight: 700; text-decoration: none; }
+    .email:hover { background: var(--primary-dark); }
+    .response { color: var(--muted); font-size: .9rem; margin-top: .8rem; }
+    h2.section-title { font-size: 1.7rem; margin-bottom: 1rem; }
+    .faq { display: grid; gap: .85rem; }
+    details { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 1rem 1.2rem; }
+    summary { cursor: pointer; font-weight: 750; }
+    details p { color: var(--secondary); padding-top: .75rem; }
+    a { color: var(--primary-dark); }
+    .privacy { margin-top: 2.25rem; padding: 1.3rem; border-radius: 16px; background: var(--soft); color: var(--secondary); }
+    footer { padding: 2rem 1.5rem; text-align: center; color: var(--muted); border-top: 1px solid var(--border); }
+    @media (max-width: 600px) { main { padding-top: 2.2rem; } .contact { padding: 1.25rem; } }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a class="logo" href="index.html">One Thing Daily</a>
+      <a class="back" href="index.html">← Back to home</a>
+    </nav>
+  </header>
+  <main>
+    <p class="eyebrow">Help &amp; support</p>
+    <h1>How can we help?</h1>
+    <p class="intro">Get help with your account, daily goals, notifications, photos, or anything else in One Thing Daily.</p>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact support</h2>
+      <p>Tell us what happened, which device you use, and any steps that reproduce the issue.</p>
+      <a class="email" href="mailto:slobo1@sheffield.ac.uk?subject=One%20Thing%20Daily%20Support">Email slobo1@sheffield.ac.uk</a>
+      <p class="response">We aim to reply within two business days.</p>
+    </section>
+
+    <h2 class="section-title">Frequently asked questions</h2>
+    <section class="faq">
+      <details>
+        <summary>How do I delete my account?</summary>
+        <p>In the app, open Profile, tap the settings icon, scroll to Account, then choose Delete Account. Confirming permanently deletes your account and associated data.</p>
+      </details>
+      <details>
+        <summary>I cannot sign in. What should I try?</summary>
+        <p>Check your connection and confirm you are using the same sign-in method you used to create the account. For email accounts, also check that your email address was confirmed.</p>
+      </details>
+      <details>
+        <summary>Why are notifications not appearing?</summary>
+        <p>Open iPhone Settings, choose Notifications, then One Thing Daily and enable Allow Notifications. You can adjust reminder preferences from the app’s settings.</p>
+      </details>
+      <details>
+        <summary>Who can see my posts?</summary>
+        <p>Shared triumphs are intended for friends you connect with in the app. You can also keep a completed triumph private when posting it.</p>
+      </details>
+    </section>
+
+    <p class="privacy">For details about information and storage, read the <a href="privacy.html">Privacy Policy</a>. You can also email us with a privacy or data request.</p>
+  </main>
+  <footer>© 2026 One Thing Daily. All rights reserved.</footer>
+</body>
+</html>
